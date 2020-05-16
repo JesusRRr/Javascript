@@ -1,7 +1,13 @@
 const express = require('express');
+const morgan = require('morgan');
+const multer = require('multer')
 
 const app = express();
 app.set('port',3000);
+
+
+//Middlewares
+app.use(morgan());
 
 //Start server
 app.listen(app.get('port'), ()=>{

@@ -4,7 +4,8 @@
   "description": "A Fullstack javascript application",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon backend/index.js"
   },
   "repository": {
     "type": "git",
@@ -28,5 +29,8 @@
     "mongoose": "^5.9.14",
     "morgan": "^1.10.0",
     "multer": "^1.4.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
   }
 }

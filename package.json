@@ -1,0 +1,22 @@
+{
+  "name": "fullstack",
+  "version": "1.0.0",
+  "description": "A Fullstack javascript application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JesusRRr/Javascript.git"
+  },
+  "keywords": [
+    "fullstack"
+  ],
+  "author": "Jesus R",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JesusRRr/Javascript/issues"
+  },
+  "homepage": "https://github.com/JesusRRr/Javascript#readme"
+}

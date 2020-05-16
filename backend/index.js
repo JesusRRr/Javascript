@@ -7,7 +7,7 @@ app.set('port',3000);
 
 
 //Middlewares
-app.use(morgan());
+app.use(morgan('dev'));
 
 //Start server
 app.listen(app.get('port'), ()=>{

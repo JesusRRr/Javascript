@@ -1,11 +1,13 @@
+require('dotenv').config();
+
 const express = require('express');
 const morgan = require('morgan');
 const multer = require('multer');
 const path = require('path');
-
 const app = express();
-app.set('port',3000);
 
+app.set('port',3000);
+require('./database')
 
 //Middlewares
 app.use(morgan('dev'));//messages from server
@@ -22,6 +24,9 @@ app.use(express.json());
 
 //Routes
 app.use('/api/books',require('./routes/book'));
+
+//Static files 
+app.use(express.static(path.join(__dirname,'public')))
 
 //Start server
 app.listen(app.get('port'), ()=>{

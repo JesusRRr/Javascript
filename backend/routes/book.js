@@ -15,7 +15,10 @@ router.post('/',async (req,res)=> {
     await newBook.save()
         .then(resp => res.json({'message':resp}))
         .catch(error => res.json({'message':error.message}))
-    
-    
+});
+
+router.delete('/:id',async (req,res)=>{
+    await Book.findByIdAndDelete(req.params.id)
+    res.json({message:'book Deleted'})
 });
 module.exports =router;

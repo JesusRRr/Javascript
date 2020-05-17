@@ -16,6 +16,12 @@ const storage =multer.diskStorage({
     }
 })
 app.use(multer({storage}).single('image'));//used for manage images
+app.use(express.urlencoded({extended:false}));
+app.use(express.json());
+
+
+//Routes
+app.use('/api/books',require('./routes/book'));
 
 //Start server
 app.listen(app.get('port'), ()=>{

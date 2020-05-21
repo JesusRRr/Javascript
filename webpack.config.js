@@ -1,11 +1,25 @@
 const path = require('path');
-const HtmlWebpackPlugin =require('html-webpack-plugin')
+const HtmlWebpackPlugin =require('html-webpack-plugin');
+const MiniCssExtractPlugin =require('mini-css-extract-plugin');
+
+const devMode = process.env.NODE_ENV !== 'production';
 
 module.exports ={
     entry: './frontend/app.js',
     output: {
         path:path.join(__dirname,'backend/public'),
-        filename: 'bundle.js'
+        filename: 'js/bundle.js'
+    },
+    module:{
+        rules:[
+            {
+                test:/\.css/,
+                use:[
+                    devMode?'style-loader' : MiniCssExtractPlugin.loader,
+                    'css-loader'
+                ]
+            }
+        ]
     },
 
     plugins:[
@@ -14,6 +28,10 @@ module.exports ={
             minify: {
                 collapseWhitespace: true
             }
+        }),
+        new MiniCssExtractPlugin({
+            filename: 'css/bundle.css'
         })
-    ]
+    ],
+    devtool : 'source-map'
 };
